@@ -3,6 +3,11 @@ int timesleep = 10;
 string inp;
 HANDLE thread;
 int main() {
+	clickon.dwFlags = MOUSEEVENTF_LEFTDOWN;
+	clickoff.dwFlags = MOUSEEVENTF_LEFTUP;
+	on[0].type,off[0].type = INPUT_MOUSE;
+	on[0].mi = clickon;
+	off[0].mi = clickoff;
 	cout << "help - Display list of commands" << endl << "cauto - Autoclicker with equal timings between each click (Keybind is ` or the ~ key)" << endl << "auto - Autoclicker optimized for fastest clicking (Keybind is ` or the ~ key)" << endl << "stop - Stops the autoclicker thread making the keybind do nothing until further input" << endl << "exit - Closes the program" << endl;
 	while (true) {
 		cout << "> ";
