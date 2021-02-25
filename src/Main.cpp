@@ -3,7 +3,7 @@ int timesleep = 10;
 string inp;
 HANDLE thread;
 int main() {
-  cout << "help - Display list of commands" << endl << "cauto - Autoclicker with equal timings between each click (Keybind is ` or the ~ key)" << endl << "auto - Autoclicker optimized for fastest clicking (Keybind is ` or the ~ key)" << endl << "stop - Stops the autoclicker thread making the keybind do nothing until further input" << endl << "exit - Closes the program" << endl;
+	cout << "help - Display list of commands" << endl << "cauto - Autoclicker with equal timings between each click (Keybind is ` or the ~ key)" << endl << "auto - Autoclicker optimized for fastest clicking (Keybind is ` or the ~ key)" << endl << "stop - Stops the autoclicker thread making the keybind do nothing until further input" << endl << "exit - Closes the program" << endl;
 	while (true) {
 		cout << "> ";
 		cin >> inp;
@@ -35,11 +35,22 @@ int main() {
 			}
 		}
 		else if (inp == "stop") {
-			stop();
+			if (!thread) {
+				cout << "No thread to stop" << endl;
+			}
+			else {
+				stop();
+				cout << "Successfully terminated thread" << endl;
+			}
 		}
 		else if (inp == "exit") {
-			stop();
+			if (thread) {
+				stop();
+			}
 			return 0;
+		}
+		else {
+			cout << "Invalid input" << endl;
 		}
 	}
 	return 0;
