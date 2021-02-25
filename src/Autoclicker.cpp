@@ -1,10 +1,14 @@
 #include "Header.h"
+INPUT on[1];
+INPUT off[1];
+MOUSEINPUT clickon;
+MOUSEINPUT clickoff;
 void consistent() {
 	while (true) {
 		if (GetAsyncKeyState(0xC0)) {
-			mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+			SendInput(1, on, sizeof(on[0]));
 			Sleep(timesleep);
-			mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+			SendInput(1, off, sizeof(off[0]));
 			Sleep(timesleep);
 		}
 	}
@@ -12,9 +16,9 @@ void consistent() {
 void fast() {
 	while (true) {
 		if (GetAsyncKeyState(0xC0)) {
-			mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+			SendInput(1, on, sizeof(on[0]));
 			Sleep(timesleep);
-			mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+			SendInput(1, off, sizeof(off[0]));
 		}
 	}
 }
