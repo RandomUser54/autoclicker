@@ -5,7 +5,7 @@ MOUSEINPUT clickon;
 MOUSEINPUT clickoff;
 void consistent() {
 	while (true) {
-		if (GetAsyncKeyState(0xC0)) {
+		if (GetKeyState(code) >> 15) {
 			SendInput(1, on, sizeof(on[0]));
 			Sleep(timesleep);
 			SendInput(1, off, sizeof(off[0]));
@@ -15,7 +15,7 @@ void consistent() {
 }
 void fast() {
 	while (true) {
-		if (GetAsyncKeyState(0xC0)) {
+		if (GetKeyState(code) >> 15) {
 			SendInput(1, on, sizeof(on[0]));
 			Sleep(timesleep);
 			SendInput(1, off, sizeof(off[0]));
