@@ -63,10 +63,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
 		char t2[] = "Initiate autoclicker";
 		char t3[] = "Initiate consistent autoclicker";
 		if ((HWND)lparam == button) {
-			char title[20];
+			char title[17];
 			int t = 0;
 			GetWindowTextA(button, title, sizeof(title));
-			for(int x = 0; x < 20; x++)
+			for(int x = 0; x < sizeof(title); x++)
 				if (title[x] != t1[x]) {
 					t = 1;
 					break;
@@ -86,10 +86,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
 			}
 		}
 		else if ((HWND)lparam == button1) {
-			char title[20];
+			char title[17];
 			int t = 0;
 			GetWindowTextA(button1, title, sizeof(title));
-			for (int x = 0; x < 20; x++)
+			for (int x = 0; x < sizeof(title); x++)
 				if (title[x] != t1[x]) {
 					t = 1;
 					break;
