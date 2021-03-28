@@ -28,7 +28,7 @@ int CALLBACK WinMain(HINSTANCE hinst, HINSTANCE prehinst, LPSTR cmdline, int sho
 	txtbox = CreateWindowA("EDIT", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER | ES_AUTOHSCROLL | ES_AUTOVSCROLL | ES_NUMBER, 250, 330, 80, 20, hwnd, NULL, hinst, NULL);
 	button3 = CreateWindowA("BUTTON", "Change keybind", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_MULTILINE, 350, 250, 80, 40, hwnd, NULL, hinst, NULL);
 	txtbox1 = CreateWindowA("EDIT", NULL, WS_CHILD | WS_VISIBLE | WS_BORDER | ES_AUTOHSCROLL | ES_AUTOVSCROLL | ES_LOWERCASE, 350, 300, 80, 20, hwnd, NULL, hinst, NULL);
-	CreateWindowA("EDIT", "Get virtual keycodes from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes", WS_CHILD | WS_VISIBLE | ES_READONLY | ES_MULTILINE, 275, 400, 200, 75, hwnd, NULL, hinst, NULL);
+	CreateWindowA("EDIT", "Get virtual keycodes from https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes (Default keybind is ~ key)", WS_CHILD | WS_VISIBLE | ES_READONLY | ES_MULTILINE, 275, 400, 200, 80, hwnd, NULL, hinst, NULL);
 	if (!hwnd) {
 		MessageBoxA(NULL, "Couldn't create window.", NULL, MB_OK);
 		return 1;
