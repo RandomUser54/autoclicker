@@ -22,7 +22,7 @@ void consistent() {
 			SendInput(1, off, sizeof(off[0]));
 			wait(timesleep);
 		}
-		Sleep(timesleep);
+		Sleep(20);
 	}
 }
 void fast() {
@@ -32,7 +32,7 @@ void fast() {
 			wait(timesleep);
 			SendInput(1, off, sizeof(off[0]));
 		}
-		Sleep(timesleep);
+		Sleep(20);
 	}
 }
 void stop() {
