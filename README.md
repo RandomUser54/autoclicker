@@ -1,2 +1,2 @@
 # autoclicker
-It makes you click fast
+It makes you click fast (only on Windows)
